@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Star</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+</head>
+
+<body>
+    <div class="formWrapper">
+        <h2 class="titleParth">Рассчитать стоимость</h2>
+        <img src="img/line-h1.png" alt=".">
+        <form id="calc">
+            <div class="formInput">
+                <div class="inputBlock">
+                    <p>Количество комнат</p>
+                    <div class="inputWrapper">
+                        <div class="input-group">
+                           <span class="input-group-addon" id="roomQuanity-" onClick="decr('roomQuanity')">-</span>
+                            <input type="text" class="form-control" name="roomQuanity" aria-describedby="basic-addon1" maxlength="2" value="1" onchange="check('roomQuanity')">
+                            <span class="input-group-addon" id="roomQuanity+" onClick="incr('roomQuanity')">+</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="inputBlock">
+                    <p>Количество санузлов</p>
+                    <div class="inputWrapper">
+                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('bathRoomQuanity')">-</span>
+                            <input type="text" class="form-control" name="bathRoomQuanity" aria-describedby="basic-addon1" maxlength="2" value="1" onchange="check('bathRoomQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('bathRoomQuanity')">+</span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkBlock">
+                <div class="wrapperCheckBlock">
+                    <div class="checkboxLine">
+                        <input type="checkbox" name="afRem" id="checkbox-1-1" class="regular-checkbox" />
+                        <label for="checkbox-1-1"></label> <span>после&nbspремонта</span> </div>
+                    <div class="checkboxLine">
+                        <input type="checkbox" id="checkbox-1-2" name="general" class="regular-checkbox" />
+                        <label for="checkbox-1-2"></label> <span>генеральная</span> </div>
+                </div>
+                <div class="inputBlock">
+                      <a class="btn btn-default checkButtonTest choosenButton" id="1buttonChoose" >
+                       Разовая<br> уборка
+                    </a> <a class="btn btn-default checkButtonTest" id="2buttonChoose">1 раз в две недели <br>со скидкой 10%</a> <a class="btn btn-default checkButtonTest" id="3buttonChoose" >
+                                1 раз в неделю <br>со скидкой 20%
+                    </a> </div>
+            </div>
+            <div class="wrapperAccord">
+                <div class="accordion-container">
+                    <div class="set"> <a href="#" class="active">
+                        Дополнительные услуги
+                        <i class="fa fa-sort-asc"></i>
+                        </a>
+                        <div class="content">
+                            <div class="cardEx">
+                                <div class="contentCard">
+                                    <h2>Внутри холодильника</h2>
+                                    <div id="holod"></div>
+                                </div>
+                                <div class="calcBlock">
+                                    <div class="inputWrapper">
+                                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('holodQuanity')">-</span>
+                                            <input type="text" class="form-control" name="holodQuanity" aria-describedby="basic-addon1" maxlength="2" value="1" onchange="check('holodQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('holodQuanity')">+</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardEx">
+                                <div class="contentCard">
+                                    <h2>Внутри духовки</h2>
+                                    <div id="dyx"></div>
+                                </div>
+                                <div class="calcBlock">
+                                    <div class="inputWrapper">
+                                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('dyxQuanity')">-</span>
+                                            <input type="text" maxlength="2" value="1" class="form-control" name="dyxQuanity" aria-describedby="basic-addon1" onchange="check('dyxQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('dyxQuanity')">+</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardEx">
+                                <div class="contentCard">
+                                    <h2>Внутри микроволновки</h2>
+                                    <div id="pech"></div>
+                                </div>
+                                <div class="calcBlock">
+                                    <div class="inputWrapper">
+                                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('pechQuanity')">-</span>
+                                            <input type="text" maxlength="2" value="1" class="form-control" name="pechQuanity" aria-describedby="basic-addon1" onchange="check('pechQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('pechQuanity')">+</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardEx">
+                                <div class="contentCard">
+                                    <h2>В кухонных шкафах</h2>
+                                    <div id="stoll"></div>
+                                </div>
+                                <div class="calcBlock">
+                                    <div class="inputWrapper">
+                                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('stollQuanity')">-</span>
+                                            <input type="text" maxlength="2" value="1" class="form-control" name="stollQuanity" aria-describedby="basic-addon1" onchange="check('stollQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('stollQuanity')">+</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardEx">
+                                <div class="contentCard">
+                                    <h2>Помыть посуду</h2>
+                                    <div id="posud"></div>
+                                </div>
+                                <div class="calcBlock">
+                                    <div class="inputWrapper">
+                                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('posudQuanity')">-</span>
+                                            <input type="text" maxlength="2" value="1" class="form-control" name="posudQuanity" aria-describedby="basic-addon1" onchange="check('posudQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('posudQuanity')">+</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardEx">
+                                <div class="contentCard">
+                                    <h2>Погладить белье</h2>
+                                    <div id="ytyh"></div>
+                                </div>
+                                <div class="calcBlock">
+                                    <div class="inputWrapper">
+                                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('ytyhQuanity')">-</span>
+                                            <input type="text" maxlength="2" value="1" class="form-control" name="ytyhQuanity" aria-describedby="basic-addon1" onchange="check('ytyhQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('ytyhQuanity')">+</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardEx">
+                                <div class="contentCard">
+                                    <h2>Вымыть балкон</h2>
+                                    <div id="balcony"></div>
+                                </div>
+                                <div class="calcBlock">
+                                    <div class="inputWrapper">
+                                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('balconyQuanity')">-</span>
+                                            <input type="text" maxlength="2" value="1" class="form-control" name="balconyQuanity" aria-describedby="basic-addon1" onchange="check('balconyQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('balconyQuanity')">+</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardEx">
+                                <div class="contentCard">
+                                    <h2>Помыть окна</h2>
+                                    <div id="windows"></div>
+                                </div>
+                                <div class="calcBlock">
+                                    <div class="inputWrapper">
+                                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('windowsQuanity')">-</span>
+                                            <input type="text" maxlength="2" value="1" class="form-control" name="windowsQuanity" aria-describedby="basic-addon1" onchange="check('windowsQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('windowsQuanity')">+</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardEx">
+                                <div class="contentCard" id="timeCard">
+                                    <h2>Дополнительное<br>время</h2> </div>
+                                <div class="calcBlock">
+                                    <div class="inputWrapper">
+                                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1" onClick="decr('timeCardQuanity')">-</span>
+                                            <input type="text" maxlength="2" value="1" class="form-control" name="timeCardQuanity" aria-describedby="basic-addon1" onchange="check('timeCardQuanity')"> <span class="input-group-addon" id="basic-addon1" onClick="incr('timeCardQuanity')">+</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapperFormFooter">
+                <div class="promoBlock">
+                    <p>К вам приедет <strong id="clinerCol"></strong> со всеми необходиміми средствами и приборами.
+                        <br>Уборка займет <strong id="hour"></strong>.Приедем в удобное для вас время. </p> <a>Что входит в уборку</a>
+                    <div class="promoPart">
+                        <p><strong>Промокод</strong></p>
+                        <input class="input" type="text"> <a class="btn btn-default">Применить</a> </div>
+                </div>
+                <div class="orderBlock">
+                    <p><strong>Стоимость уборки</strong><strong id="cost"></strong></p> <!--<a class="button">Заказать уборку</a>--> 
+                    <button type="submit" class="btn btn-default " data-aria-aria-expanded="false">Заказать уборку</button>
+                    </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="calc.js"></script>
+</body>
+
+</html>
